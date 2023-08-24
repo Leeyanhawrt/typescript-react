@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import ToDoList from './components/ToDoList';
 import NewTodo from './components/NewTodo';
+import { ToDo } from './todo.model';
 
 const App: React.FC = () => {
-  const todos = [{id: 't1', text:'Finish the course'}];
+  const [todos, setTodos] = useState<ToDo[]>([]);
 
   const todoAddHandler = (text:string) => {
-    console.log(text)
+    setTodos([{id: 't1', text:'Finish the course'}]);
   }
 
   return (
